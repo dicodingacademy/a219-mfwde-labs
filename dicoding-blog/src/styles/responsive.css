@@ -3,6 +3,34 @@
     grid-row-gap: 16px;
 }
 
+@media screen and (max-width: 499px) {
+    .nav {
+        z-index: 10;
+        background-color: #fff;
+        width: 300px;
+        position: absolute;
+
+        /* This trasform moves the drawer off canvas. */
+        -webkit-transform: translate(-300px, 0);
+        transform: translate(-300px, 0);
+
+        /* Optionally, we animate the drawer. */
+        transition: transform 0.3s ease;
+    }
+
+    .open {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+
+    .nav__item {
+        display: list-item;
+        border-bottom: 1px solid #E0E0E0;
+        width: 100%;
+        text-align: left;
+    }
+}
+
 @media screen and (min-width: 455px) {
     .headline__content {
         padding: 16px 16px;
@@ -14,6 +42,12 @@
 
     .headline__description {
         font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .header__menu {
+        display: none;
     }
 }
 
@@ -36,13 +70,19 @@
     }
 }
 
-
 @media screen and (min-width: 700px) {
     .posts {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-column-gap: 10px;
         grid-row-gap: 16px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .nav__list {
+        max-width: 800px;
+        margin: 0 auto;
     }
 }
 

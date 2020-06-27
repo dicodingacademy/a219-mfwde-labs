@@ -42,6 +42,14 @@ body {
     color: #212121;
 }
 
+.header__menu {
+    font-size: 32px;
+    margin: 10px auto;
+    display: block;
+    width: 30px;
+}
+
+
 /*
  * Top level navigation
  */
@@ -50,13 +58,13 @@ body {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
 }
 
 .nav__list {
     width: 100%;
     padding: 0;
     margin: 0;
-    text-align: center;
 }
 
 .nav__item {
