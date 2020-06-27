@@ -154,16 +154,16 @@ main {
 
 .headline__content {
     width: 100%;
-    padding: 16px 32px;
+    padding: 16px 0;
 }
 
 .headline__title {
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 500;
 }
 
 .headline__description {
-    font-size: 16px;
+    font-size: 12px;
     margin-top: 12px;
 }
 
@@ -227,7 +227,7 @@ main {
 }
 
 .post-item__content {
-    padding: 16px 32px 32px 32px;
+    padding: 16px;
 }
 
 .post-item__thumbnail {
@@ -247,7 +247,7 @@ main {
 
 .post-item__title {
     font-weight: 500;
-    font-size: 18px;
+    font-size: 16px;
     margin-top: 16px;
     transition: 0.3s opacity;
 }
@@ -263,7 +263,7 @@ main {
 
 .post-item__description {
     margin-top: 16px;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.5em;
 }
 

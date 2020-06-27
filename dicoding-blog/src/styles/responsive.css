@@ -3,6 +3,40 @@
     grid-row-gap: 16px;
 }
 
+@media screen and (min-width: 455px) {
+    .headline__content {
+        padding: 16px 16px;
+    }
+
+    .headline__title {
+        font-size: 28px;
+    }
+
+    .headline__description {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .headline__content {
+        margin: 0 auto;
+        max-width: 650px;
+    }
+
+    .post-item__content {
+        padding: 16px 32px 32px 32px;
+    }
+
+    .post-item__title {
+        font-size: 18px;
+    }
+
+    .post-item__description {
+        font-size: 14px;
+    }
+}
+
+
 @media screen and (min-width: 700px) {
     .posts {
         display: grid;
@@ -16,6 +50,10 @@
     .headline {
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+
+    .headline__content {
+        padding: 16px 32px;
     }
 
     .posts {
