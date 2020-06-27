@@ -1,3 +1,5 @@
+import DataSource from '../../data/data-source';
+
 const Upcoming = {
   async render() {
     return `
@@ -6,7 +8,10 @@ const Upcoming = {
   },
 
   async afterRender() {
-    // Fungsi ini akan dipanggil setelah render()
+    const movies = await DataSource.upcomingMovies();
+    console.log(movies);
+
+    // TODO: tampilkan movies di dalam DOM
   },
 };
 

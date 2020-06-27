@@ -1,3 +1,6 @@
+import UrlParser from '../../routes/url-parser';
+import DataSource from '../../data/data-source';
+
 const Detail = {
   async render() {
     return `
@@ -6,7 +9,11 @@ const Detail = {
   },
 
   async afterRender() {
-    // Fungsi ini akan dipanggil setelah render()
+    const url = UrlParser.parseActiveUrlWithoutCombiner();
+    const movie = await DataSource.detailMovie(url.id);
+    console.log(movie);
+
+    // TODO: tampilkan movie di dalam DOM
   },
 };
 
