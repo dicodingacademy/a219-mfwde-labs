@@ -37,4 +37,21 @@ const createMovieItemTemplate = (movie) => `
   </div>
   `;
 
-export { createMovieItemTemplate, createMovieDetailTemplate };
+const createLikeButtonTemplate = () => `
+  <button aria-label="add to favorite" id="likeButton" class="like">
+     <i class="fa fa-heart-o" aria-hidden="true"></i>
+  </button>
+`;
+
+const createLikedButtonTemplate = () => `
+  <button aria-label="remove from favorite" id="likeButton" class="like">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </button>
+`;
+
+export {
+  createMovieItemTemplate,
+  createMovieDetailTemplate,
+  createLikeButtonTemplate,
+  createLikedButtonTemplate,
+};
