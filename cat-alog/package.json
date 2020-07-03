@@ -1,0 +1,28 @@
+{
+  "name": "cat-alog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start-dev": "webpack-dev-server --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "start-prod": "npm run build && live-server ./dist"
+  },
+  "keywords": [],
+  "author": "your_name <your_email@domain.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "copy-webpack-plugin": "^6.0.3",
+    "css-loader": "^3.6.0",
+    "eslint": "^7.3.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "html-webpack-plugin": "^4.3.0",
+    "live-server": "^1.2.1",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^4.2.2"
+  }
+}
