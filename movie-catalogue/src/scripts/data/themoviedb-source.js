@@ -1,6 +1,6 @@
 import API_ENDPOINT from '../globals/api-endpoint';
 
-class DataSource {
+class TheMovieDbSource {
   static async nowPlayingMovies() {
     const response = await fetch(API_ENDPOINT.NOW_PLAYING);
     const responseJson = await response.json();
@@ -19,4 +19,4 @@ class DataSource {
   }
 }
 
-export default DataSource;
+export default TheMovieDbSource;
