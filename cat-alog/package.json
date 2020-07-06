@@ -17,6 +17,8 @@
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.0",
     "html-webpack-plugin": "^4.3.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-webpack-plugin": "^2.4.2",
     "live-server": "^1.2.1",
     "style-loader": "^1.2.1",
     "webpack": "^4.43.0",
