@@ -1,4 +1,4 @@
-import database from '../../data/database';
+import FavoriteMovieIdb from '../../data/favorite-movie-idb';
 import { createMovieItemTemplate } from '../templates/template-creator';
 
 const Like = {
@@ -14,7 +14,7 @@ const Like = {
   },
 
   async afterRender() {
-    const movies = await database.getAllMovies();
+    const movies = await FavoriteMovieIdb.getAllMovies();
     const moviesContainer = document.querySelector('#movies');
     movies.forEach((movie) => {
       moviesContainer.innerHTML += createMovieItemTemplate(movie);
