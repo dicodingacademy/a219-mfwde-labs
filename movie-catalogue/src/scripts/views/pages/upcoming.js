@@ -1,4 +1,4 @@
-import DataSource from '../../data/data-source';
+import TheMovieDbSource from '../../data/themoviedb-source';
 import { createMovieItemTemplate } from '../templates/template-creator';
 
 const Upcoming = {
@@ -14,7 +14,7 @@ const Upcoming = {
   },
 
   async afterRender() {
-    const movies = await DataSource.upcomingMovies();
+    const movies = await TheMovieDbSource.upcomingMovies();
     const moviesContainer = document.querySelector('#movies');
     movies.forEach((movie) => {
       moviesContainer.innerHTML += createMovieItemTemplate(movie);
