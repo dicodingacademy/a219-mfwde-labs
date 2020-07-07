@@ -15,7 +15,7 @@ header > h1, p {
 
 .games {
     width: 80%;
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -27,14 +27,13 @@ header > h1, p {
     width: 100%;
 }
 
-@media screen and (max-width: 800px){
-    .games {
-        width: 90%;
-    }
-}
-
-@media screen and (max-width: 425px){
+@media screen and (max-width: 600px){
     .games {
         width: 95%;
     }
 }
+
+
+
+
+
