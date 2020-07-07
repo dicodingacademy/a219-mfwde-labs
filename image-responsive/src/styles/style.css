@@ -1,0 +1,40 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    padding: 12px;
+}
+
+header > h1, p {
+    text-align: center;
+}
+
+.games {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.game {
+    padding: 16px;
+}
+
+.games > .game > img {
+    width: 100%;
+}
+
+@media screen and (max-width: 800px){
+    .games {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 425px){
+    .games {
+        width: 95%;
+    }
+}
