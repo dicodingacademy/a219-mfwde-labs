@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "start": "webpack --config webpack.config.js && node index.js"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "your_name <your_email@domain.com>",
