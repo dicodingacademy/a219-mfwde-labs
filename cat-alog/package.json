@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "start-prod": "node server.js"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "your_name <your_email@domain.com>",
