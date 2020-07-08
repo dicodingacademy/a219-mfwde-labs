@@ -14,5 +14,5 @@ app.get('/', (request, response) => {
 
 // listen for requests :)
 const listener = app.listen(PORT, () => {
-  console.log(`Your app is listening on port ${port}`);
+  console.log(`Your app is listening on port ${PORT}`);
 });
