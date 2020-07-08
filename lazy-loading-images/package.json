@@ -2,10 +2,10 @@
   "name": "lazy-loading-images",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "dimas_saputra <dimas.maulanads@gmail.com>",

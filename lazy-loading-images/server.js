@@ -1,5 +1,7 @@
 const express = require('express');
 
+const PORT = 5000;
+
 const app = express();
 
 // http://expressjs.com/en/starter/static-files.html
@@ -11,6 +13,6 @@ app.get('/', (request, response) => {
 });
 
 // listen for requests :)
-const listener = app.listen(process.env.PORT, () => {
-  console.log(`Your app is listening on port ${listener.address().port}`);
+const listener = app.listen(PORT, () => {
+  console.log(`Your app is listening on port ${PORT}`);
 });
