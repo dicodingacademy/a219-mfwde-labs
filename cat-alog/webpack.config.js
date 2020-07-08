@@ -5,7 +5,7 @@ const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 
 module.exports = {
-  entry: path.resolve(__dirname, 'src/index.js'),
+  entry: path.resolve(__dirname, 'src/server.js'),
   mode: 'production',
   output: {
     filename: 'bundle.js',
@@ -27,7 +27,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: 'index.html',
+      filename: 'server.js.html',
       template: path.resolve(__dirname, 'src/index.html'),
     }),
     new CopyWebpackPlugin({
