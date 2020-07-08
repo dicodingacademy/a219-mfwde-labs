@@ -2,9 +2,9 @@
   "name": "video-over-gif",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "dimas_saputra <dimas.maulanads@gmail.com>",
