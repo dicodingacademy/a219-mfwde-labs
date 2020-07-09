@@ -1,0 +1,80 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    color: #333333;
+}
+
+header {
+    padding: 12px;
+    background-color: cornflowerblue;
+}
+
+header > h1 {
+    text-align: center;
+    color: white;
+    font-weight: lighter;
+}
+
+main {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 800px;
+}
+
+form {
+    margin-bottom: 32px;
+}
+
+h2 {
+    font-weight: lighter;
+    padding: 8px 0;
+}
+
+label, input, select, button {
+    width: 100%;
+    display: block;
+}
+
+label {
+    padding: 8px 0 4px 0;
+}
+
+input {
+    border: 1px cornflowerblue solid;
+    border-radius: 5px;
+    font-family: sans-serif;
+    padding: 8px 8px;
+}
+
+select {
+    border: 1px cornflowerblue solid;
+    border-radius: 5px;
+    background-color: transparent;
+    padding: 8px 8px;
+}
+
+button {
+    margin: 16px 0 16px 0;
+    padding: 8px;
+    font-family: sans-serif;
+    font-weight: bold;
+    background-color: cornflowerblue;
+    color: white;
+    border: 1px solid cornflowerblue;
+    border-radius: 5px;
+}
+
+button:active {
+    color: cornflowerblue;
+    background-color: transparent;
+}
+
+li {
+    list-style-type: none;
+    margin: 10px;
+}

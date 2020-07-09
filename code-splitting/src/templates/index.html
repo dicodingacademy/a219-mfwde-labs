@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Apps</title>
+</head>
+<body>
+<header>
+    <h1>Contact Apps</h1>
+</header>
+<main>
+    <form id="inputContactForm">
+        <h2>Input Contact</h2>
+        <label for="inputName">Name</label>
+        <input type="text" id="inputName">
+        <label for="inputNumber">Number</label>
+        <input type="tel" id="inputNumber">
+        <label for="inputType">Type</label>
+        <select id="inputType">
+            <option value="mobile">Mobile</option>
+            <option value="office">Office</option>
+            <option value="other">Other</option>
+        </select>
+        <button>Add contact</button>
+    </form>
+    <form id="showContactForm">
+        <h2>Show Contact</h2>
+        <label for="contactType">Type</label>
+        <select id="contactType">
+            <option value="all">All</option>
+            <option value="mobile">Mobile</option>
+            <option value="office">Office</option>
+            <option value="other">Other</option>
+        </select>
+        <button>Show/Refresh contact</button>
+    </form>
+    <ul id="contacts">
+
+    </ul>
+</main>
+</body>
+</html>
