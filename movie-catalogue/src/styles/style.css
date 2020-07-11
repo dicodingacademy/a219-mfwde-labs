@@ -122,7 +122,10 @@ main {
 }
 
 .movie-item .movie-item__header .movie-item__header__poster {
-    width: 100%;
+    object-position: center;
+    object-fit: cover;
+    min-width: 100%;
+    height: 250px;
 }
 
 .movie-item .movie-item__header .movie-item__header__rating {
@@ -220,4 +223,10 @@ footer p a {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.skeleton {
+    user-select: none;
+    background-color: #eeeeee;
+    color: #eeeeee;
 }

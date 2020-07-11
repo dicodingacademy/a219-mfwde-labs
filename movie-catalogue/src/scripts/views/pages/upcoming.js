@@ -1,5 +1,8 @@
 import TheMovieDbSource from '../../data/themoviedb-source';
-import { createMovieItemTemplate } from '../templates/template-creator';
+import {
+  createMovieItemTemplate,
+  createSkeletonMovieTemplate
+} from '../templates/template-creator';
 
 const Upcoming = {
   async render() {
@@ -7,7 +10,7 @@ const Upcoming = {
       <div class="content">
         <h2 class="content__heading">Upcoming in Cinema</h2>
         <div id="movies" class="movies">
-
+            ${createSkeletonMovieTemplate(20)}
         </div>
       </div>
     `;
@@ -16,6 +19,7 @@ const Upcoming = {
   async afterRender() {
     const movies = await TheMovieDbSource.upcomingMovies();
     const moviesContainer = document.querySelector('#movies');
+    moviesContainer.innerHTML = '';
     movies.forEach((movie) => {
       moviesContainer.innerHTML += createMovieItemTemplate(movie);
     });
