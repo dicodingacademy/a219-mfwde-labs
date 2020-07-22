@@ -12,6 +12,15 @@ const Detail = {
   },
 
   async afterRender() {
+    // lazy load font awesome
+    let scriptElement = document.querySelector('script[src="https://use.fontawesome.com/b070c8f1df.js"]');
+
+    if (!scriptElement) {
+      scriptElement = document.createElement('script');
+      scriptElement.src = 'https://use.fontawesome.com/b070c8f1df.js';
+      document.body.appendChild(scriptElement);
+    }
+
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const movie = await TheMovieDbSource.detailMovie(url.id);
     const movieContainer = document.querySelector('#movie');
