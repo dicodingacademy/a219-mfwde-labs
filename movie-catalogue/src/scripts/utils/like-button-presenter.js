@@ -1,7 +1,7 @@
 import FavoriteMovieIdb from '../data/favorite-movie-idb';
-import { createLikeButtonTemplate, createLikedButtonTemplate } from '../views/templates/template-creator';
+import { createLikeMovieButtonTemplate, createUnlikeMovieButtonTemplate } from '../views/templates/template-creator';
 
-const LikeButtonInitiator = {
+const LikeButtonPresenter = {
   async init({ likeButtonContainer, movie }) {
     this._likeButtonContainer = likeButtonContainer;
     this._movie = movie;
@@ -25,7 +25,7 @@ const LikeButtonInitiator = {
   },
 
   _renderLike() {
-    this._likeButtonContainer.innerHTML = createLikeButtonTemplate();
+    this._likeButtonContainer.innerHTML = createLikeMovieButtonTemplate();
 
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
@@ -35,7 +35,7 @@ const LikeButtonInitiator = {
   },
 
   _renderLiked() {
-    this._likeButtonContainer.innerHTML = createLikedButtonTemplate();
+    this._likeButtonContainer.innerHTML = createUnlikeMovieButtonTemplate();
 
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
@@ -45,4 +45,4 @@ const LikeButtonInitiator = {
   },
 };
 
-export default LikeButtonInitiator;
+export default LikeButtonPresenter;
