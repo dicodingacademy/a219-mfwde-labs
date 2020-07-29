@@ -7,9 +7,22 @@ class FavoriteMovieSearchPresenter {
   _listenToSearchRequestByUser() {
     this._queryElement = document.getElementById('query');
     this._queryElement.addEventListener('change', (event) => {
-      this._latestQuery = event.target.value;
-      this._favoriteMovies.searchMovies(this._latestQuery);
+      this._searchMovies(event.target.value);
     });
+  }
+
+  _searchMovies(latestQuery) {
+    this._latestQuery = latestQuery;
+    this._favoriteMovies.searchMovies(this.latestQuery);
+  }
+
+  _showFoundMovies(movies) {
+    const html = movies.reduce(
+      (carry, movie) => carry.concat(`<li class="movie"><span class="movie__title">${movie.title || '-'}</span></li>`),
+      '',
+    );
+
+    document.querySelector('.movies').innerHTML = html;
   }
 
   get latestQuery() {
