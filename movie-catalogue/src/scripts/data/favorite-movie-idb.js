@@ -17,7 +17,6 @@ const FavoriteMovieIdb = {
 
     return (await dbPromise).get(OBJECT_STORE_NAME, id);
   },
-
   async getAllMovies() {
     return (await dbPromise).getAll(OBJECT_STORE_NAME);
   },
@@ -30,6 +29,9 @@ const FavoriteMovieIdb = {
   },
   async deleteMovie(id) {
     return (await dbPromise).delete(OBJECT_STORE_NAME, id);
+  },
+  async searchMovies(query) {
+
   },
 };
 
