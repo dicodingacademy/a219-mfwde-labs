@@ -25,10 +25,16 @@ class FavoriteMovieSearchPresenter {
   }
 
   _showFoundMovies(movies) {
-    const html = movies.reduce(
-      (carry, movie) => carry.concat(`<li class="movie"><span class="movie__title">${movie.title || '-'}</span></li>`),
-      '',
-    );
+    let html;
+
+    if (movies.length > 0) {
+      html = movies.reduce(
+        (carry, movie) => carry.concat(`<li class="movie"><span class="movie__title">${movie.title || '-'}</span></li>`),
+        '',
+      );
+    } else {
+      html = '<div class="movies__not__found">Film tidak ditemukan</div>';
+    }
 
     document.querySelector('.movies').innerHTML = html;
 

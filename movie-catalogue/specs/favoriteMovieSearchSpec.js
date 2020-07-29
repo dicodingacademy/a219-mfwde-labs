@@ -200,4 +200,30 @@ describe('Searching movies', () => {
         .toHaveBeenCalled();
     });
   });
+
+  describe('When no favorite movies could be found', () => {
+    it('should show the empty message', (done) => {
+      document.getElementById('movie-search-container')
+        .addEventListener('movies:searched:updated', () => {
+          expect(document.querySelectorAll('.movies__not__found').length)
+            .toEqual(1);
+          done();
+        });
+
+      favoriteMovies.searchMovies.withArgs('film a').and.returnValues([]);
+
+      searchMovies('film a');
+    });
+
+    it('should not show any movie', (done) => {
+      document.getElementById('movie-search-container').addEventListener('movies:searched:updated', () => {
+        expect(document.querySelectorAll('.movie').length).toEqual(0);
+        done();
+      });
+
+      favoriteMovies.searchMovies.withArgs('film a').and.returnValues([]);
+
+      searchMovies('film a');
+    });
+  });
 });
