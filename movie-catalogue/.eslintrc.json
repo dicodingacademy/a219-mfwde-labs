@@ -3,10 +3,12 @@
         "browser": true,
         "es2020": true,
         "node": true,
-        "jasmine": true
+        "jasmine": true,
+        "codeceptjs/codeceptjs": true
     },
     "extends": [
-        "airbnb-base"
+        "airbnb-base",
+        "plugin:codeceptjs/recommended"
     ],
     "parserOptions": {
         "ecmaVersion": 11,
@@ -25,5 +27,5 @@
         "class-methods-use-this": 0,
         "no-new": 0
     },
-    "plugins": ["jasmine"]
+    "plugins": ["jasmine", "codeceptjs"]
 }
