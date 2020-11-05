@@ -2,17 +2,17 @@ const assert = require('assert');
 
 Feature('Liking Movies');
 
-Before((I) => {
+Before(({ I }) => {
   I.amOnPage('/#/like');
 });
 
-Scenario('showing empty liked movies', (I) => {
+Scenario('showing empty liked movies', ({ I }) => {
   I.seeElement('#query');
   // I.seeElement('.query'); // membuat test menjadi gagal
   I.see('Tidak ada film untuk ditampilkan', '.movie-item__not__found');
 });
 
-Scenario('liking one movie', async (I) => {
+Scenario('liking one movie', async ({ I }) => {
   I.see('Tidak ada film untuk ditampilkan', '.movie-item__not__found');
 
   I.amOnPage('/');
@@ -33,7 +33,7 @@ Scenario('liking one movie', async (I) => {
   assert.strictEqual(firstFilmTitle, likedFilmTitle);
 });
 
-Scenario('searching movies', async (I) => {
+Scenario('searching movies', async ({ I }) => {
   I.see('Tidak ada film untuk ditampilkan', '.movie-item__not__found');
 
   I.amOnPage('/');
