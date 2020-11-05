@@ -18,7 +18,6 @@ const createMovieDetailTemplate = (movie) => `
     <h3>Overview</h3>
     <p>${movie.overview}</p>
   </div>
-</div>
 `;
 
 const createMovieItemTemplate = (movie) => `
