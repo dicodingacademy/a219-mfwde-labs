@@ -15,7 +15,7 @@ const contacts = [
     id: '1594278889481',
     name: 'Harry Potter',
     type: 'mobile',
-    number: '+62-8131-13xx'
+    number: '+62-8131-13xx',
   },
 ];
 
