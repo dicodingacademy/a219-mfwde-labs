@@ -1,24 +1,25 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: sans-serif;
+  font-family: sans-serif;
 }
 
 header > h1 {
-    text-align: center;
+  text-align: center;
 }
 
 main {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
 }
 
-main > picture > img {
-    display: block;
-    width: 100%;
+main > img {
+  display: block;
+  width: 100%;
 }
+  
