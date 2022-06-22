@@ -8,7 +8,7 @@
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "dimas_saputra <dimas.maulanads@gmail.com>",
+  "author": "your_name <your_email@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1"
