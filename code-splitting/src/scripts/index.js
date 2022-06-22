@@ -14,8 +14,7 @@ const contactContainer = document.querySelector('#contacts');
 inputContactForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const contact = {
-    id: new Date().valueOf()
-      .toString(),
+    id: new Date().valueOf().toString(),
     name: inputName.value,
     number: inputNumber.value,
     type: inputType.value,
@@ -34,15 +33,15 @@ showContactForm.addEventListener('submit', (event) => {
 });
 
 const filterContacts = (filter) => {
-    filter(contacts, contactType.value === 'all' ? {} : { type: contactType.value })
-      .forEach(renderContact);
+  filter(contacts, contactType.value === 'all' ? {} : { type: contactType.value })
+    .forEach(renderContact);
 };
 
 const renderContact = (contact) => {
   contactContainer.innerHTML += `
-            <li>
-                <h4>${contact.name} (${contact.type})</h4>
-                <p>${contact.number}</p>
-            </li>
-   `;
+    <li>
+      <h4>${contact.name} (${contact.type})</h4>
+      <p>${contact.number}</p>
+    </li>
+  `;
 };
