@@ -10,7 +10,7 @@ const Upcoming = {
       <div class="content">
         <h2 class="content__heading">Upcoming in Cinema</h2>
         <div id="movies" class="movies">
-            ${createSkeletonMovieTemplate(20)}
+          ${createSkeletonMovieTemplate(20)}
         </div>
       </div>
     `;
