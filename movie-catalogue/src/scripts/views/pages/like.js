@@ -1,4 +1,4 @@
-import FavoriteMovieIdb from '../../data/favoritemovie-idb';
+import FavoriteMovieIdb from '../../data/favorite-movie-idb';
 import { createMovieItemTemplate } from '../templates/template-creator';
 
 const Like = {
@@ -7,7 +7,6 @@ const Like = {
       <div class="content">
         <h2 class="content__heading">Your Liked Movie</h2>
         <div id="movies" class="movies">
-
         </div>
       </div>
     `;
