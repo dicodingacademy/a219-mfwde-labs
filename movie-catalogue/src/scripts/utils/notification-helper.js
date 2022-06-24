@@ -15,7 +15,7 @@ const NotificationHelper = {
   },
 
   _checkAvailability() {
-    return !!('Notification' in window);
+    return 'Notification' in window;
   },
 
   _checkPermission() {
