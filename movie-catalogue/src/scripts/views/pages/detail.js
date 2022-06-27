@@ -13,6 +13,7 @@ const Detail = {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const movie = await TheMovieDbSource.detailMovie(url.id);
     const movieContainer = document.querySelector('#movie');
+
     movieContainer.innerHTML = createMovieDetailTemplate(movie);
   },
 };

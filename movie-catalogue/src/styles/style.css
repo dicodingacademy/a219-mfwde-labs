@@ -11,13 +11,14 @@ body {
   flex-direction: column;
 }
 
+
 /*
   AppBar
 */
 
 .app-bar {
   padding: 8px 16px;
-  background-color: white;
+  background-color: #fff;
   display: grid;
   grid-template-columns: auto 1fr auto;
   gap: 10px;
@@ -106,6 +107,7 @@ main {
   margin: 32px 0;
 }
 
+
 /*
   Movie Item
 */
@@ -160,6 +162,7 @@ main {
   -webkit-box-orient: vertical;
 }
 
+
 /*
   Movie
 */
@@ -181,6 +184,7 @@ main {
 .movie .movie__info h4 {
   margin: 8px 0;
 }
+
 
 
 /*
