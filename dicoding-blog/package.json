@@ -4,21 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start-dev": "webpack-dev-server --mode=development",
-    "build": "webpack --mode=production"
+    "start-dev": "webpack serve --open --port 9000 --mode=development",
+    "build": "webpack --mode=production",
+    "serve": "http-server dist --port 9000"
   },
   "author": "your_name <your_email@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "clean-webpack-plugin": "^3.0.0",
-    "copy-webpack-plugin": "^6.0.2",
-    "css-loader": "^3.6.0",
-    "favicons-webpack-plugin": "^3.0.1",
-    "file-loader": "^6.0.0",
-    "html-webpack-plugin": "^4.3.0",
-    "style-loader": "^1.2.1",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.1",
+    "favicons-webpack-plugin": "^5.0.2",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "http-server": "^14.1.1",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.2"
   }
 }

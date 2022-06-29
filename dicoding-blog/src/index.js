@@ -7,15 +7,15 @@ const main = document.querySelector('main');
 const drawer = document.querySelector('#drawer');
 
 menu.addEventListener('click', function (event) {
-    drawer.classList.toggle('open');
-    event.stopPropagation();
+  drawer.classList.toggle('open');
+  event.stopPropagation();
 });
 
 hero.addEventListener('click', function () {
-    drawer.classList.remove('open');
+  drawer.classList.remove('open');
 });
 
 main.addEventListener('click', function () {
-    drawer.classList.remove('open');
+  drawer.classList.remove('open');
 });
 
