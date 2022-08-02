@@ -6,7 +6,8 @@
   "scripts": {
     "start-dev": "webpack serve --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "serve": "http-server dist --port 9000"
+    "serve": "http-server dist --port 9000",
+    "build-serve": "npm run build && npm run serve"
   },
   "keywords": [],
   "author": "your_name <your_email@gmail.com>",
@@ -15,6 +16,7 @@
     "@babel/core": "^7.18.5",
     "@babel/preset-env": "^7.18.2",
     "babel-loader": "^8.2.5",
+    "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "eslint": "^8.17.0",
@@ -27,6 +29,7 @@
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.2",
     "webpack-merge": "^5.8.0",
+    "workbox-precaching": "^6.5.3",
     "workbox-webpack-plugin": "^6.5.3"
   },
   "dependencies": {
