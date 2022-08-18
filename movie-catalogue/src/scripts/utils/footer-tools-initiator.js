@@ -25,7 +25,6 @@ const FooterToolsInitiator = {
     });
   },
 
-  // eslint-disable-next-line no-empty-function
   async _initialState() {
     this._showSubscribeButton();
   },
@@ -44,13 +43,8 @@ const FooterToolsInitiator = {
     }
 
     console.log('_subscribePushMessage: Subscribing to push message...');
-    const subscribeOptions = {
-      userVisibleOnly: true,
-      applicationServerKey: this._urlB64ToUint8Array(CONFIG.PUSH_MSG_VAPID_PUBLIC_KEY),
-    };
-
     const pushSubscription = await this._registrationServiceWorker?.pushManager.subscribe(
-      subscribeOptions,
+      this._generateSubscribeOptions(),
     );
 
     if (!pushSubscription) {
@@ -58,8 +52,15 @@ const FooterToolsInitiator = {
       return;
     }
 
-    await this._sendPostToServer(CONFIG.PUSH_MSG_SUBSCRIBE_URL, pushSubscription);
-    console.log('Push message has been subscribed');
+    try {
+      await this._sendPostToServer(CONFIG.PUSH_MSG_SUBSCRIBE_URL, pushSubscription);
+      console.log('Push message has been subscribed');
+    } catch (err) {
+      console.error('Failed to store push notification data to server:', err.message);
+
+      // Undo subscribing push notification
+      await pushSubscription?.unsubscribe();
+    }
 
     this._showSubscribeButton();
   },
@@ -67,21 +68,27 @@ const FooterToolsInitiator = {
   async _unsubscribePushMessage(event) {
     event.stopPropagation();
 
-    const subscription = await this._registrationServiceWorker?.pushManager.getSubscription();
-    if (!subscription) {
+    const pushSubscription = await this._registrationServiceWorker?.pushManager.getSubscription();
+    if (!pushSubscription) {
       window.alert('Haven\'t subscribing to push message');
       return;
     }
 
-    const isHasBeenUnsubscribed = await subscription.unsubscribe();
+    try {
+      await this._sendPostToServer(CONFIG.PUSH_MSG_UNSUBSCRIBE_URL, pushSubscription);
 
-    if (!isHasBeenUnsubscribed) {
-      console.log('Failed to unsubscribe push message');
-      return;
+      const isHasBeenUnsubscribed = await pushSubscription.unsubscribe();
+      console.log('isHasBeenUnsubscribed: ', isHasBeenUnsubscribed);
+      if (!isHasBeenUnsubscribed) {
+        console.log('Failed to unsubscribe push message');
+        await this._sendPostToServer(CONFIG.PUSH_MSG_SUBSCRIBE_URL, pushSubscription);
+        return;
+      }
+
+      console.log('Push message has been unsubscribed');
+    } catch (err) {
+      console.error('Failed to erase push notification data from server:', err.message);
     }
-
-    await this._sendPostToServer(CONFIG.PUSH_MSG_UNSUBSCRIBE_URL, subscription);
-    console.log('Push message has been unsubscribed');
 
     this._showSubscribeButton();
   },
@@ -100,6 +107,13 @@ const FooterToolsInitiator = {
       outputArray[i] = rawData.charCodeAt(i);
     }
     return outputArray;
+  },
+
+  _generateSubscribeOptions() {
+    return {
+      userVisibleOnly: true,
+      applicationServerKey: this._urlB64ToUint8Array(CONFIG.PUSH_MSG_VAPID_PUBLIC_KEY),
+    };
   },
 
   async _sendPostToServer(url, data) {
@@ -125,7 +139,8 @@ const FooterToolsInitiator = {
   },
 
   async _isCurrentSubscriptionAvailable() {
-    return await this._registrationServiceWorker?.pushManager.getSubscription() !== null;
+    const checkSubscription = await this._registrationServiceWorker?.pushManager.getSubscription();
+    return Boolean(checkSubscription);
   },
 
   async _isNotificationReady() {
@@ -160,4 +175,3 @@ const FooterToolsInitiator = {
 };
 
 export default FooterToolsInitiator;
-  
