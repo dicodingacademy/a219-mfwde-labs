@@ -1,15 +1,16 @@
 import { createMovieItemTemplate } from '../../templates/template-creator';
 
-class FavoriteMovieSearchView {
+class FavoriteMovieView {
   getTemplate() {
     return `
       <div class="content">
-      <input id="query" type="text">
-      <h2 class="content__heading">Your Liked Movie</h2>
+        <input id="query" type="text">
+        <h2 class="content__heading">Your Liked Movie</h2>
+  
         <div id="movies" class="movies">
         </div>
       </div>
-   `;
+    `;
   }
 
   runWhenUserIsSearching(callback) {
@@ -18,11 +19,7 @@ class FavoriteMovieSearchView {
     });
   }
 
-  showMovies(movies) {
-    this.showFavoriteMovies(movies);
-  }
-
-  showFavoriteMovies(movies = []) {
+  showFavoriteMovies(movies) {
     let html;
     if (movies.length) {
       html = movies.reduce((carry, movie) => carry.concat(createMovieItemTemplate(movie)), '');
@@ -36,8 +33,12 @@ class FavoriteMovieSearchView {
   }
 
   _getEmptyMovieTemplate() {
-    return '<div class="movie-item__not__found movies__not__found">Tidak ada film untuk ditampilkan</div>';
+    return `
+      <div class="movie-item__not__found">
+        Tidak ada film untuk ditampilkan
+      </div>
+    `;
   }
 }
 
-export default FavoriteMovieSearchView;
+export default FavoriteMovieView;

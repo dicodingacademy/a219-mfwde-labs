@@ -32,8 +32,8 @@ const createMovieItemTemplate = (movie) => `
     <div class="movie-item__content">
       <h3 class="movie__title"><a href="/#/detail/${movie.id}">${movie.title || '-'}</a></h3>
       <p>${movie.overview || '-'}</p>
-     </div>
-</div>
+    </div>
+  </div>
 `;
 
 const createLikeMovieButtonTemplate = () => `
