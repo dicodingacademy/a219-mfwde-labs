@@ -6,8 +6,7 @@
   "scripts": {
     "start-dev": "webpack serve --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "serve": "http-server dist --port 9000",
-    "build-serve": "npm run build && npm run serve"
+    "serve": "http-server dist --port 9000"
   },
   "keywords": [],
   "author": "your_name <your_email@gmail.com>",
@@ -36,6 +35,9 @@
     "idb": "^7.0.1",
     "lazysizes": "^5.3.2",
     "regenerator-runtime": "^0.13.9",
+    "workbox-routing": "^7.0.0",
+    "workbox-strategies": "^7.0.0",
+    "workbox-precaching": "^6.5.3",
     "workbox-window": "^6.5.3"
   }
 }

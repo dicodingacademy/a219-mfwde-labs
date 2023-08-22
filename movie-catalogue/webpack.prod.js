@@ -1,8 +1,5 @@
-const path = require('path');
 const { merge } = require('webpack-merge');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const common = require('./webpack.common');
 
 module.exports = merge(common, {
@@ -48,11 +45,11 @@ module.exports = merge(common, {
     ],
   },
   plugins: [
-    new WorkboxWebpackPlugin.InjectManifest({
-      swSrc: path.resolve(__dirname, 'src/scripts/sw.js'),
-      swDest: './sw.bundle.js',
+    new BundleAnalyzerPlugin({
+      openAnalyzer: true,
+      analyzerMode: 'static',
+      analyzerPort: 9001,
+      reportFilename: 'bundle-analyzer-report/index.html',
     }),
-    new CleanWebpackPlugin(),
-    new BundleAnalyzerPlugin(),
   ],
 });
