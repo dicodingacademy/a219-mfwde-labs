@@ -1,7 +1,26 @@
 import { precacheAndRoute } from 'workbox-precaching';
+import { registerRoute, Route } from 'workbox-routing';
+import { StaleWhileRevalidate } from 'workbox-strategies';
 
 // Do precaching
 precacheAndRoute(self.__WB_MANIFEST);
+
+const themoviedbApi = new Route(
+  ({ url }) => url.href.startsWith('https://api.themoviedb.org/3/'),
+  new StaleWhileRevalidate({
+    cacheName: 'themoviedb-api',
+  }),
+);
+
+const themoviedbImageApi = new Route(
+  ({ url }) => url.href.startsWith('https://image.tmdb.org/t/p/w500/'),
+  new StaleWhileRevalidate({
+    cacheName: 'themoviedb-image-api',
+  }),
+);
+
+registerRoute(themoviedbApi);
+registerRoute(themoviedbImageApi);
 
 self.addEventListener('install', () => {
   console.log('Service Worker: Installed');
@@ -11,17 +30,22 @@ self.addEventListener('install', () => {
 self.addEventListener('push', (event) => {
   console.log('Service Worker: Pushed');
 
-  const dataJson = event.data.json();
-  const notification = {
-    title: dataJson.title,
+  const notificationMovie = event.data.json();
+  const notificationData = {
+    title: notificationMovie.title,
     options: {
-      body: dataJson.options.body,
-      icon: dataJson.options.icon,
-      image: dataJson.options.image,
+      body: notificationMovie.options.body,
+      icon: notificationMovie.options.icon,
+      image: notificationMovie.options.image,
     },
   };
 
-  event.waitUntil(self.registration.showNotification(notification.title, notification.options));
+  const showNotification = self.registration.showNotification(
+    notificationData.title,
+    notificationData.options,
+  );
+
+  event.waitUntil(showNotification);
 });
 
 self.addEventListener('notificationclick', (event) => {

@@ -1,4 +1,4 @@
-import * as WorkboxWindow from 'workbox-window';
+import { Workbox } from 'workbox-window';
 
 const swRegister = async () => {
   if (!('serviceWorker' in navigator)) {
@@ -6,9 +6,11 @@ const swRegister = async () => {
     return;
   }
 
-  const wb = new WorkboxWindow.Workbox('/sw.bundle.js');
+  const wb = new Workbox('/sw.bundle.js');
   try {
-    await wb.register();
+    // eslint-disable-next-line no-unused-vars
+    const registrations = await wb.register();
+
     console.log('Service worker registered');
   } catch (error) {
     console.log('Failed to register service worker', error);
