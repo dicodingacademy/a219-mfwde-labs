@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -12,14 +13,13 @@ body, html {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 12px;
   color: #424242;
 }
 
 /*
  * Header
- *
  */
 
 .header {
@@ -48,7 +48,6 @@ body {
   display: block;
   width: 30px;
 }
-
 
 /*
  * Top level navigation
@@ -88,7 +87,6 @@ body {
   color: #000;
 }
 
-
 /*
  * Jumbotron
  */
@@ -99,7 +97,7 @@ body {
   min-height: 380px;
   width: 100%;
   text-align: center;
-  background-image: url("../images/hero.jpg");
+  background-image: url('../images/hero.jpg');
   background-position: center;
   background-color: green;
 }
@@ -121,7 +119,6 @@ body {
   font-size: 18px;
   font-weight: 300;
 }
-
 
 /*
  * main
@@ -176,7 +173,7 @@ main {
 }
 
 .headline__button {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
   margin-top: 24px;
   cursor: pointer;
@@ -301,5 +298,5 @@ footer a {
   display: inline-block;
   padding: 1.3em;
   text-decoration: none;
-  color: #fff
+  color: #fff;
 }

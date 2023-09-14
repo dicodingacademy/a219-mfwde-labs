@@ -18,4 +18,3 @@ hero.addEventListener('click', function () {
 main.addEventListener('click', function () {
   drawer.classList.remove('open');
 });
-
