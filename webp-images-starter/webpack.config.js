@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -9,8 +10,8 @@ module.exports = {
     app: path.resolve(__dirname, 'src/index.js'),
   },
   output: {
-    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    filename: '[name].bundle.js',
   },
   module: {
     rules: [
@@ -28,6 +29,8 @@ module.exports = {
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
+
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/templates/index.html'),
       filename: 'index.html',
@@ -41,6 +44,10 @@ module.exports = {
       ],
     }),
     new ImageminWebpWebpackPlugin({
+      /**
+       * Full documentations:
+       * https://github.com/iampava/imagemin-webp-webpack-plugin#api
+       */
       config: [
         {
           test: /\.(jpe?g|png)/,
