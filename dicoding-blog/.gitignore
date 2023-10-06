@@ -1,27 +1,18 @@
-### JetBrains template
+### IDE
 .idea
-
-### VSCode template
 .vscode
 
-### Node template
+### Node
 # Logs
 logs
 *.log
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
 
 # Dependency directories
 node_modules/
 
-# dotenv environment variables file
-.env
-.env.test
+# Optional npm cache directory
+.npm
 
 ### Additional directories
 dist
-
-### Additional files
-package-lock.json
