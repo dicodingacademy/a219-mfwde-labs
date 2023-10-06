@@ -11,7 +11,7 @@
   "author": "your_name <your_email@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.18.2"
   },
   "devDependencies": {
     "fluent-ffmpeg": "^2.1.2"
