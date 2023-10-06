@@ -5,9 +5,7 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: {
-    app: path.resolve(__dirname, 'src/index.js'),
-  },
+  entry: path.resolve(__dirname, 'src/index.js'),
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
@@ -51,12 +49,16 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, 'src/images'),
-          to: path.resolve(__dirname, 'dist/images'),
+          from: path.resolve(__dirname, 'src/public'),
+          to: path.resolve(__dirname, 'dist/public'),
         },
       ],
     }),
     new FaviconsWebpackPlugin({
+      /**
+       * Full documentations:
+       * https://www.npmjs.com/package/favicons-webpack-plugin#user-content-advanced-usage
+       */
       logo: path.resolve(__dirname, 'src/public/dicoding.jpeg'),
 
       outputPath: 'public/favicons',
