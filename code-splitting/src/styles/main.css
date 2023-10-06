@@ -35,7 +35,10 @@ h2 {
   padding: 8px 0;
 }
 
-label, input, select, button {
+label,
+input,
+select,
+button {
   width: 100%;
   display: block;
 }

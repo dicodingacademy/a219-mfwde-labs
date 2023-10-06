@@ -1,4 +1,5 @@
 import '../styles/main.css';
+
 import contacts from './contacts';
 
 const inputContactForm = document.querySelector('#inputContactForm');
@@ -33,8 +34,10 @@ showContactForm.addEventListener('submit', (event) => {
 });
 
 const filterContacts = (filter) => {
-  filter(contacts, contactType.value === 'all' ? {} : { type: contactType.value })
-    .forEach(renderContact);
+  filter(
+    contacts,
+    contactType.value === 'all' ? {} : { type: contactType.value },
+  ).forEach(renderContact);
 };
 
 const renderContact = (contact) => {
