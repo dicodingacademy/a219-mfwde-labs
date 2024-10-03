@@ -1,14 +1,14 @@
 .posts {
   display: grid;
-  grid-row-gap: 16px;
+  row-gap: 16px;
 }
 
 @media screen and (min-width: 700px) {
   .posts {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 10px;
-    grid-row-gap: 16px;
+    column-gap: 10px;
+    row-gap: 16px;
   }
 }
 
